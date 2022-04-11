@@ -1,0 +1,74 @@
+
+
+1. python -m venv env (this creates the virtual environment)
+
+2. env\scripts\activate (this activate the virtual environment)
+
+2. pip install django
+
+3. django-admin startproject <project name> . (this creates the django web server (notice the .))
+
+manage.py is a wrapper over django-admin
+it implies you can use it to run all the commands provides by django-admin
+
+4. python manage.py runserver <optional port number default 8000> (this start the django server)
+
+5.  python manage.py startapp <project name> (this create the app to run on the server)
+
+6. register the app in the server 
+(settingd.py)
+inside the app folder
+______________________
+
+migration folder -> for generating db tables
+admin.py  -> define the admin interfsace
+apps.py -> configure the app
+models.py -> where we define models for the app
+tests.py -> define the test for the apps
+views.py -> define the view ( request handler)
+
+pip install mysqlclient
+
+Django debug toolbar
+
+pip install django-debug-toolbar
+
+add  django-debug-toolbar to list install app
+
+Nigration
+
+1. create the models
+
+2. python manage.py makemigration -> this create the migration files
+
+3. python manage.py migrate -> this commits the migration to the databasae
+
+
+python manage.py makemigraions --dry-run --verbosity 3
+
+python manage.py createsuperuser
+
+pip install coverage
+
+coverage html
+
+pip install djangorestframework
+
+pip install django-cors-headers
+pip install djangorestframework-simplejwt
+
+coverage run --omit='*/venv/*' manage.py test
+
+#Generic views
+
+CreateAPIView -> post
+ListAPIView -> get
+RetrieveAPIView -> get
+DestroyAPIView -> delete
+UpdateAPIView -> put / patch
+
+ListCreateAPIView -> support all non id operation
+RetrieveUpdateDestroyAPIView -> get / patch / put / delete -> all non id operation
+
+RetrieveUpdateAPIView -> get / patch / put
+RetrieveDestroyAPIView -> get /delete
